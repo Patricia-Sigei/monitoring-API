@@ -1,6 +1,25 @@
-
-
+# Dependencies
 node_modules/
 
+# Environment variables
 .env
 
+# Logs
+*.log
+
+# Build
+dist/
+build/
+
+# Prisma
+generated/
+
+# IDEs
+.idea/
+.vscode/
+
+# AI Tools
+.claude/
+.windsurf/
+.agents/
+skills-lock.json
