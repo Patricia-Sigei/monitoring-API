@@ -12,3 +12,27 @@ datasource db {
   provider = "postgresql"
    url      = env("DATABASE_URL")
 }
+
+model Incident {
+  id          Int      @id @default(autoincrement())
+  type        String
+  description String
+  status      String   @default("OPEN")
+  createdAt   DateTime @default(now())
+}
+
+model Deployment {
+  id          Int      @id @default(autoincrement())
+  version     String
+  environment String
+  deployedAt  DateTime @default(now())
+}
+
+model Alert {
+  id         Int      @id @default(autoincrement())
+  severity   String
+  message    String
+  resolved   Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
