@@ -1,11 +1,10 @@
-const express = require("express");
+import express from "express";
 
-import healthRoutes from "./routes/health.routes.js";
-import metricsRoutes from "./routes/metrics.routes.js";
-import chaosRoutes from "./routes/chaos.routes.js";
+import healthRoutes from "./src/routes/health.routes.js";
+import metricsRoutes from "./src/routes/metrics.routes.js";
+import chaosRoutes from "./src/routes/chaos.routes.js";
 
 const app = express();
-const router = express.Router();
 
 app.get("/", (req, res) => {
   res.json({ message: "monitoring project is running 🚀" });
@@ -19,4 +18,4 @@ app.use((req, res) => {
   res.status(404).json({ error: "Route not found" });
 });
 
-module.exports = app;
+export default app;
