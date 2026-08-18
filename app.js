@@ -8,6 +8,8 @@ import { metricsMiddleware } from "./src/middleware/metrics.middleware.js";
 
 const app = express();
 
+app.use(express.json());
+
 app.use(metricsMiddleware);
 
 app.get("/", (req, res) => {
