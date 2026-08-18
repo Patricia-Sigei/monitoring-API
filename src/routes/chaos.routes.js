@@ -3,6 +3,6 @@ import { chaos } from "../controllers/chaos.controller.js";
 
 const router = Router();
 
-router.get("/", chaos);
+router.post("/", chaos);
 
 export default router;
